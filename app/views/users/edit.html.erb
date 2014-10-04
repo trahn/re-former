@@ -1,3 +1,14 @@
+<% if @user.errors.any? %>
+  <ul>
+  <% @user.errors.full_messages.each do |e| %>
+    <li><%= e %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+
+
 <%= form_for @user do |f| %>
   <%= f.label :username, "Your Username:" %>
   <%= f.text_field :username, placeholder: "example Username" %><br>
